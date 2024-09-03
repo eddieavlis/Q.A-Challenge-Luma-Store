@@ -55,7 +55,7 @@ Baseado nos Casos de Uso propostos pelo desafio da Coodesh, os cenários foram e
 4. **IDE Utilizada**: PyCharm
    - Plugin Gherkin para suporte ao desenvolvimento.
   
-5. **Executar os Testes
+5. **Executar os Testes**
 Na pasta do projeto, digite: "behave features/nome_do_arquivo.feature"
 
 ### Exemplo:
