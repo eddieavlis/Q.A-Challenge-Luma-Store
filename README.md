@@ -56,9 +56,12 @@ Baseado nos Casos de Uso propostos pelo desafio da Coodesh, os cenários foram e
    - Plugin Gherkin para suporte ao desenvolvimento.
   
 5. **Executar os Testes**
-Na pasta do projeto, digite: "behave features/nome_do_arquivo.feature"
+Na pasta do projeto, digite:
+
+"behave features/nome_do_arquivo.feature"
 
 ### Exemplo:
+
 \Challenge_Luma_Store>behave features/UC_test_criar_uma_conta.feature
 
 Siga estas instruções para configurar o ambiente e iniciar a execução dos testes automatizados para o Luma Store.
