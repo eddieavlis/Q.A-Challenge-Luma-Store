@@ -63,6 +63,7 @@ Na pasta raiz do projeto, digite:  "behave features/nome_do_arquivo.feature"
 
 \Challenge_Luma_Store>behave features/UC_test_criar_uma_conta.feature
 
+
 Siga estas instruções para configurar o ambiente e iniciar a execução dos testes automatizados para o Luma Store.
 
 ---
