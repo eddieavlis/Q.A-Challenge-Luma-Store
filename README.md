@@ -54,13 +54,18 @@ Baseado nos Casos de Uso propostos pelo desafio da Coodesh, os cenários foram e
 
 4. **IDE Utilizada**: PyCharm
    - Plugin Gherkin para suporte ao desenvolvimento.
+  
+5. **Executar os Testes
+Na pasta do projeto, digite: "behave features/nome_do_arquivo.feature"
+
+### Exemplo:
+\Challenge_Luma_Store>behave features/UC_test_criar_uma_conta.feature
 
 Siga estas instruções para configurar o ambiente e iniciar a execução dos testes automatizados para o Luma Store.
 
 ---
 
 Para mais detalhes, sinta-se à vontade para explorar o código e os cenários de teste incluídos neste repositório.
-
 
 
 
