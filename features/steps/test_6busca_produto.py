@@ -13,11 +13,13 @@ def step_impl(context):
         EC.title_contains("Home Page")
     )
 
+
 @when('eu busco por "shirt" usando o campo de busca no menu superior')
 def step_impl(context):
     search_box = context.driver.find_element(By.CSS_SELECTOR, "#search")
     search_box.send_keys("shirt")
     search_box.submit()
+
 
 @then('eu devo clicar no último resultado sugerido')
 def step_impl(context):
@@ -28,6 +30,7 @@ def step_impl(context):
     # Localiza o último resultado sugerido e clica
     last_product = context.driver.find_element(By.CSS_SELECTOR, "#maincontent > div.columns > div.column.main > div.search.results > div.products.wrapper.grid.products-grid > ol > li:nth-last-child(1) > div > a")
     last_product.click()
+
 
 @then('eu devo visualizar as informações do produto selecionado')
 def step_impl(context):
@@ -47,7 +50,7 @@ def step_impl(context):
         # Define o diretório para capturas de tela e o caminho do arquivo
         screenshot_dir = r"C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot"
         os.makedirs(screenshot_dir, exist_ok=True)
-        screenshot_path = os.path.join(screenshot_dir, "test_busca_produto.png")
+        screenshot_path = os.path.join(screenshot_dir, "test_6busca_produto.png")
 
         # Captura de tela da página do produto para validação
         context.driver.save_screenshot(screenshot_path)

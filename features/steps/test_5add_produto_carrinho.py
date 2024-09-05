@@ -51,7 +51,7 @@ def step_impl(context):
         ).click()
 
         # Caminho para salvar a captura de tela
-        screenshot_path = r'C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot\test_add_produto_carrinho.png'
+        screenshot_path = r'C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot\test_5add_produto_carrinho.png'
 
         # Verificar se o diretório existe, e se não, criar
         screenshot_dir = os.path.dirname(screenshot_path)

@@ -9,6 +9,7 @@ def before_all(context):
     """
     context.driver = get_driver()
 
+
 def after_all(context):
     """
     Executado uma vez após todos os cenários.

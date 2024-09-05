@@ -5,9 +5,9 @@
 # Casos de Uso:
 
 
-Funcionalidade: Criação de conta
+Funcionalidade: Criar uma conta
 
-  @test_criar_uma_conta
+  @test_2criar_uma_conta
 Cenário: Criar uma conta na tela de Login/Cadastro
   Dado que eu esteja na tela de Login/Cadastro
   Quando eu preencher o formulário de criação de conta com dados válidos

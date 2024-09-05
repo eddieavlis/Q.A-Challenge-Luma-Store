@@ -4,32 +4,15 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-@given('que eu estou autenticado no site da "Luma Store"')
+@given('que eu acesso o site da "Luma Store"')
 def step_impl(context):
     # Acessa a página inicial e realiza o login
     context.driver.get("https://magento.softwaretestingboard.com/")
 
-    WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR,
-                                    'body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.authorization-link > a'))
-    ).click()
-
-    WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '//input[contains(@name,"login[username]")]'))
-    ).send_keys('igor.thomas.dossantos@capgemini.com')
-
-    WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.XPATH, '//input[contains(@name,"login[password]")]'))
-    ).send_keys('Senha#123456')
-
-    WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#send2'))
-    ).click()
-
 
 @when('eu adiciono um produto aleatório do catálogo de moda masculina ao carrinho')
 def step_impl(context):
-    # Navega até o catálogo de moda masculina
+    # Navega até o catálogo de produtos
     WebDriverWait(context.driver, 10).until(
         EC.element_to_be_clickable((By.ID, 'ui-id-5'))
     ).click()
@@ -40,23 +23,23 @@ def step_impl(context):
 
     # Adiciona o produto ao carrinho
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.columns > div.column.main > div.products.wrapper.grid.products-grid > ol > li:nth-child(5) > div > a > span > span > img'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.columns > div.column.main > div.products.wrapper.grid.products-grid > ol > li:nth-child(7) > div > a > span > span > img'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//*[@id="option-label-size-143-item-170"]'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#option-label-size-143-item-170'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//div[contains(@class,"swatch-option color")]'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#option-label-color-93-item-49'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//button[@type="submit"][contains(., "Add to Cart")]'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#product-addtocart-button'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//a[contains(., "shopping cart")]'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.page.messages > div:nth-child(2) > div > div > div > a'))
     ).click()
 
 
@@ -99,6 +82,6 @@ def step_impl(context):
         print("A funcionalidade de adicionar comentários não está disponível na página do carrinho.")
 
         # Captura a tela e salva no local especificado
-        screenshot_path = 'C:\\Users\\EddieSilva\\Desenvolvimentos\\Testes\\Challenge_Luma_Store\\features\\screenshot\\test_add_comentario_em_produto.png'
+        screenshot_path = 'C:\\Users\\EddieSilva\\Desenvolvimentos\\Testes\\Challenge_Luma_Store\\features\\screenshot\\test_3add_comentario_em_produto.png'
         context.driver.save_screenshot(screenshot_path)
         print(f'Screenshot salva em {screenshot_path}')

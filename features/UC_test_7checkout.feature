@@ -7,7 +7,7 @@
 
 Funcionalidade: Realizar checkout de produto
 
-  @test_checkout
+  @test_7checkout
 Cenário: Realizar checkout
   Dado que eu me logo no site da "Luma Store"
   Quando adiciono produto ao carrinho
