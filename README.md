@@ -30,13 +30,13 @@ Baseado nos Casos de Uso propostos pelo desafio da Coodesh, os cenários foram e
 
 - **Cypress**: Configuração para testes paralelos complicada e suporte limitado para outros navegadores.
 - **Ghost Inspector**: Menos flexível e customizável em comparação com outras ferramentas.
-- **Robot Framework**: Curva de aprendizado inicial e integração mais complexa.
+- **Robot Framework**: Integração mais complexa.
 
 ## Desenvolvimento e Execução dos Testes
 
 1. **Escrita dos Cenários em Gherkin**: Cenários descritos em uma linguagem natural e acessível.
 2. **Implementação com Behave e Selenium**: Cenários implementados utilizando Behave para integração com o Selenium.
-3. **Execução e Validação**: Testes executados com sucesso na maioria dos casos. Um desafio encontrado foi no teste de "Realizar checkout", onde os botões "Next" e "Place Order" não estavam clicando devido a um erro "ElementClickInterceptedException". Foi utilizada uma abordagem com JavaScript para forçar o clique e concluir o teste.
+3. **Execução e Validação**: Testes executados com sucesso na maioria dos casos. Um desafio encontrado foi no teste de "Realizar checkout", onde os botões "Next" e "Place Order" não estavam clicando devido ao erro "ElementClickInterceptedException". Foi utilizada uma abordagem com JavaScript para forçar o clique e concluir o teste.
 
 ## Instalação e Uso do Projeto
 
