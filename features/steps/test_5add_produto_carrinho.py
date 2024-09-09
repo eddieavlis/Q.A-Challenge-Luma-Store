@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchWindowException
 import os
 
 
-@given('que eu esteja na página da "Luma Store"')
+@given('que eu esteja na pagina da "Luma Store"')
 def step_impl(context):
     try:
         # URL "Luma Store"
@@ -65,5 +65,5 @@ def step_impl(context):
         assert "Hero Hoodie" in context.driver.page_source
 
     except NoSuchWindowException:
-        print("A janela do navegador foi fechada. Verifique se o navegador está aberto.")
+        print("A janela do navegador foi fechada. Verifique se o navegador esta aberto.")
         raise

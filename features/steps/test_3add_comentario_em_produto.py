@@ -10,7 +10,7 @@ def step_impl(context):
     context.driver.get("https://magento.softwaretestingboard.com/")
 
 
-@when('eu adiciono um produto aleatório do catálogo de moda masculina ao carrinho')
+@when('eu adiciono um produto aleatorio do catalogo de moda masculina ao carrinho')
 def step_impl(context):
     # Navega até o catálogo de produtos
     WebDriverWait(context.driver, 10).until(
@@ -43,7 +43,7 @@ def step_impl(context):
     ).click()
 
 
-@when('tento adicionar um comentário ao produto no carrinho')
+@when('tento adicionar um comentario ao produto no carrinho')
 def step_impl(context):
     try:
         # Verifica se o campo de comentário está presente na página
@@ -63,7 +63,7 @@ def step_impl(context):
         context.comment_added = False
 
 
-@then('devo verificar que não foi possível adicionar o comentário')
+@then('devo verificar que nao foi possivel adicionar o comentario')
 def step_impl(context):
     if context.comment_added:
         # Se o comentário foi adicionado, o cenário falhou, pois não era esperado

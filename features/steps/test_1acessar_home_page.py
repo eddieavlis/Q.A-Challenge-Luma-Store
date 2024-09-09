@@ -7,14 +7,14 @@ from features.browser import get_driver
 import pytest
 
 
-@given('que eu acesso a página inicial da Luma Store')
+@given('que eu acesso a pagina inicial da Luma Store')
 def step_impl(context):
     # Instanciar a HomePage e abrir a página
     context.home_page = HomePage(context.driver)
     context.home_page.open()
 
 
-@when('a página carregar')
+@when('a pagina carregar')
 def step_impl(context):
     # Espera até que a página inicial carregue corretamente
     WebDriverWait(context.driver, 10).until(

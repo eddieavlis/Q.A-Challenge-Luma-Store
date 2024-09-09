@@ -6,7 +6,7 @@ from selenium.common.exceptions import NoSuchWindowException
 import os
 
 
-@given('que eu estou na página inicial da "Luma Store"')
+@given('que eu estou na pagina inicial da "Luma Store"')
 def step_impl(context):
     context.driver.get("https://magento.softwaretestingboard.com/")
     WebDriverWait(context.driver, 10).until(
@@ -18,44 +18,59 @@ def step_impl(context):
 def step_impl(context):
     search_box = context.driver.find_element(By.CSS_SELECTOR, "#search")
     search_box.send_keys("shirt")
-    search_box.submit()
 
-
-@then('eu devo clicar no último resultado sugerido')
-def step_impl(context):
-    # Espera as sugestões aparecerem
+    # Espera até que a lista de sugestões apareça
     WebDriverWait(context.driver, 10).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, "#maincontent .products-grid"))
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "#search"))
     )
-    # Localiza o último resultado sugerido e clica
-    last_product = context.driver.find_element(By.CSS_SELECTOR, "#maincontent > div.columns > div.column.main > div.search.results > div.products.wrapper.grid.products-grid > ol > li:nth-last-child(1) > div > a")
-    last_product.click()
+
+    # Espera até que o último item da lista seja visível e clicável
+    last_suggestion = WebDriverWait(context.driver, 10).until(
+        EC.visibility_of_element_located((By.CSS_SELECTOR, "#qs-option-7"))
+    )
+    last_suggestion.click()
 
 
-@then('eu devo visualizar as informações do produto selecionado')
+@then('eu devo visualizar a pagina Search results for: "ultimo resultado sugerido"')
 def step_impl(context):
+    # Aplica o zoom de 50% na página
+    context.driver.execute_script("document.body.style.zoom='50%'")
+
+    # Caminho para salvar a captura de tela
+    screenshot_path = r"C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot\test_6busca_produto.png"
+
     try:
-        # Espera o título da página mudar para o nome do produto
+        # Verifica se a página de resultados carregou
+        print("Aguardando titulo da pagina...")
         WebDriverWait(context.driver, 10).until(
-            EC.title_contains("Proteus Fitness Jackshirt")
+            EC.title_contains("Search results for:")
         )
-        # Assegura que o título da página contém o nome do produto
-        assert "Proteus Fitness Jackshirt" in context.driver.title
+        print("Titulo da pagina encontrado.")
 
-        # Verifica se o título do produto na página é correto
-        product_title_element = context.driver.find_element(By.CSS_SELECTOR, "#maincontent > div.columns > div > div.product-info-main > div.page-title-wrapper.product > h1")
-        product_title = product_title_element.text
-        assert product_title == "Proteus Fitness Jackshirt", f"Esperado: 'Proteus Fitness Jackshirt', Encontrado: '{product_title}'"
+        # Verifica se um item não esperado está presente na página
+        unwanted_item_xpath = "//a[@class='product-item-link'][contains(.,'Radiant Tee')]"
+        unwanted_items = context.driver.find_elements(By.XPATH, unwanted_item_xpath)
 
-        # Define o diretório para capturas de tela e o caminho do arquivo
-        screenshot_dir = r"C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot"
-        os.makedirs(screenshot_dir, exist_ok=True)
-        screenshot_path = os.path.join(screenshot_dir, "test_6busca_produto.png")
+        if unwanted_items:
+            # Se o item não esperado estiver presente, falhe o teste
+            print(f"Item nao esperado 'Radiant Tee' encontrado na pagina de resultados.")
+            # Captura de tela para evidência
+            context.driver.save_screenshot(screenshot_path)
+            print(f"Captura de tela salva em {screenshot_path}")
+            assert False, "Item nao esperado 'Radiant Tee' encontrado na pagina de resultados."
 
-        # Captura de tela da página do produto para validação
+        print("Nenhum item não esperado encontrado.")
+
+    except TimeoutException as e:
+        print(f"Erro de Timeout: {e}")
+        # Captura de tela em caso de timeout
         context.driver.save_screenshot(screenshot_path)
-        print(f"Captura de tela salva em: {screenshot_path}")
+        print(f"Captura de tela salva em {screenshot_path}")
+        assert False, f"Timeout ao esperar pelo título da página: {e}"
 
-    except NoSuchWindowException:
-        print("A janela do navegador foi fechada. Verifique se o navegador está aberto.")
-        raise
+    except Exception as e:
+        print(f"Erro inesperado: {e}")
+        # Captura de tela em caso de erro inesperado
+        context.driver.save_screenshot(screenshot_path)
+        print(f"Captura de tela salva em {screenshot_path}")
+        assert False, f"Erro inesperado: {e}"

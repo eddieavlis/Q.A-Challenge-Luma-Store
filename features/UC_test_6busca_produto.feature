@@ -7,9 +7,10 @@
 
 Funcionalidade: Busca de produto
 
-  @test_6busca_produto
-Cenário: Buscar por "shirt" e clicar no último resultado sugerido e revisar se a página de resultados carregou corretamente
-  Dado que eu estou na página inicial da "Luma Store"
+A pagina carrega com produtos e especificacoes diferente da esperada | vide imagem: test_6busca_produto.png"
+
+@test_6busca_produto
+Cenario: Buscar por "shirt" e revisar se a pagina de resultados carregou corretamente e clicar no ultimo resultado sugerido
+  Dado que eu estou na pagina inicial da "Luma Store"
   Quando eu busco por "shirt" usando o campo de busca no menu superior
-  Então eu devo clicar no último resultado sugerido
-  E eu devo visualizar as informações do produto selecionado
+  Entao eu devo visualizar a pagina Search results for: "ultimo resultado sugerido"

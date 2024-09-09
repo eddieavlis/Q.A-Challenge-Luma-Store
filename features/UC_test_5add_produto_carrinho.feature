@@ -7,8 +7,8 @@
 
 Funcionalidade: Adicionar um produto no carrinho
 
-  @test_5add_produto_carrinho
-Cenário: Adicionar um produto no carrinho
-  Dado que eu esteja na página da "Luma Store"
+@test_5add_produto_carrinho
+Cenario: Adicionar um produto no carrinho
+  Dado que eu esteja na pagina da "Luma Store"
   Quando eu adicionar um produto no carrinho
-  Então um produto deve ser adicionado ao carrinho
+  Entao um produto deve ser adicionado ao carrinho

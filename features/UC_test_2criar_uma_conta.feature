@@ -7,9 +7,9 @@
 
 Funcionalidade: Criar uma conta
 
-  @test_2criar_uma_conta
-Cenário: Criar uma conta na tela de Login/Cadastro
+@test_2criar_uma_conta
+Cenario: Criar uma conta na tela de Login/Cadastro
   Dado que eu esteja na tela de Login/Cadastro
-  Quando eu preencher o formulário de criação de conta com dados válidos
-  E eu submeter o formulário
-  Então uma nova conta deve ser criada com sucesso
+  Quando eu preencher o formulario de criacao de conta com dados validos
+  E eu submeter o formulario
+  Entao uma nova conta deve ser criada com sucesso

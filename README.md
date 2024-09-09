@@ -57,11 +57,17 @@ Baseado nos Casos de Uso propostos pelo desafio da Coodesh, os cenários foram e
 
 ### Executar os Testes
 
-Na pasta raiz do projeto, digite:  "behave features/nome_do_arquivo.feature"
+Executar e gerar o relatório de teste do Challenge Luma Store.
+Na pasta raiz do projeto, digite. behave --format html --outfile reports/test-report.html
 
-**Exemplo**:
+Executar os testes por caso de uso individualmente.
+Na pasta raiz do projeto, digite. behave features/nome_do_caso_de_uso.feature
 
-\Challenge_Luma_Store>behave features/UC_test_criar_uma_conta.feature
+**Exemplos**:
+
+\Challenge_Luma_Store> behave --format html --outfile reports/test-report.html
+
+\Challenge_Luma_Store>behave features/UC_test_1acessar_home_page.feature
 
 Siga estas instruções para configurar o ambiente e iniciar a execução dos testes automatizados para o Luma Store.
 

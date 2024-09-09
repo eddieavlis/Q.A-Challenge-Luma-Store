@@ -12,7 +12,7 @@ def step_impl(context):
     context.driver.get("https://magento.softwaretestingboard.com/")
 
     # Clica no link menu "Sign In"
-    WebDriverWait(context.driver, 30).until(
+    WebDriverWait(context.driver, 10).until(
         EC.element_to_be_clickable((By.CSS_SELECTOR, 'body > div.page-wrapper > header > div.panel.wrapper > div > ul > li.authorization-link > a'))
     ).click()
 
@@ -38,11 +38,11 @@ def step_impl(context):
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#narrow-by-list2 > dd > ol > li:nth-child(1) > a'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.columns > div.sidebar.sidebar-main > div.widget.block.block-static-block > div > ul:nth-child(2) > li:nth-child(2) > a'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.columns > div.column.main > div.products.wrapper.grid.products-grid > ol > li:nth-child(7) > div > a > span > span > img'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#maincontent > div.columns > div.column.main > div.products.wrapper.grid.products-grid > ol > li:nth-child(3) > div > a > span > span > img'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(
@@ -50,7 +50,7 @@ def step_impl(context):
     ).click()
 
     WebDriverWait(context.driver, 10).until(
-        EC.element_to_be_clickable((By.CSS_SELECTOR, '#option-label-color-93-item-49'))
+        EC.element_to_be_clickable((By.CSS_SELECTOR, '#option-label-color-93-item-50'))
     ).click()
 
     WebDriverWait(context.driver, 10).until(

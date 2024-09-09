@@ -10,7 +10,7 @@ def step_impl(context):
     context.driver.get("https://magento.softwaretestingboard.com/")
 
 
-@when('adiciono um produto aleatório do catalogo de moda masculina no carrinho')
+@when('adiciono um produto aleatorio do catalogo de moda masculina no carrinho')
 def step_impl(context):
     # Navega até o catálogo de moda masculina
     WebDriverWait(context.driver, 10).until(
