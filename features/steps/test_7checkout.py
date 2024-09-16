@@ -30,7 +30,7 @@ def step_impl(context):
     ).click()
 
 
-@when('adiciono produto ao carrinho')
+@when('eu adiciono produto ao carrinho')
 def step_impl(context):
     # Sequência que adiciona um produto ao carrinho
     WebDriverWait(context.driver, 10).until(
@@ -62,7 +62,7 @@ def step_impl(context):
     ).click()
 
 
-@when('devo iniciar o processo de checkout')
+@when('eu iniciao o processo de checkout')
 def step_impl(context):
     try:
         # Inicia o processo de checkout

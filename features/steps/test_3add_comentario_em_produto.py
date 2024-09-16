@@ -4,7 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-@given('que eu acesso o site da "Luma Store"')
+@given('que acesso o site da "Luma Store"')
 def step_impl(context):
     # Acessa a página inicial e realiza o login
     context.driver.get("https://magento.softwaretestingboard.com/")

@@ -7,7 +7,7 @@ from features.browser import get_driver
 import pytest
 
 
-@given('que eu acesso a pagina inicial da Luma Store')
+@given('que eu acesso a pagina inicial da "Luma Store"')
 def step_impl(context):
     # Instanciar a HomePage e abrir a página
     context.home_page = HomePage(context.driver)
@@ -22,7 +22,7 @@ def step_impl(context):
     )
 
 
-@then('a home page da "Luma Store" deve ser exibida corretamente')
+@then('a home page da "Luma Store" deve ser carregada corretamente')
 def step_impl(context):
     # Verifica se a página inicial foi carregada corretamente
     screenshot_path = r"C:\Users\EddieSilva\Desenvolvimentos\Testes\Challenge_Luma_Store\features\screenshot\test_1acessar_home_page.png"

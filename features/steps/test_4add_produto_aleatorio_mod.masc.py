@@ -4,13 +4,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
-@given('que acesso o site da "Luma Store"')
+@given('que eu acesso o site da "Luma Store"')
 def step_impl(context):
     # Acessa a página inicial e realiza o login
     context.driver.get("https://magento.softwaretestingboard.com/")
 
 
-@when('adiciono um produto aleatorio do catalogo de moda masculina no carrinho')
+@when('eu adiciono um produto aleatorio do catalogo de moda masculina no carrinho')
 def step_impl(context):
     # Navega até o catálogo de moda masculina
     WebDriverWait(context.driver, 10).until(

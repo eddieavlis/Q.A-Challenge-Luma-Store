@@ -22,12 +22,12 @@ def step_impl(context):
     # Preencher campos do formulário
     first_name_element = wait.until(EC.presence_of_element_located(
         (By.XPATH, "/html/body/div[2]/main/div[3]/div/form/fieldset[1]/div[1]/div/input")))
-    first_name_element.send_keys("Bira")
+    first_name_element.send_keys("Edson")
     last_name_element = wait.until(EC.presence_of_element_located((By.XPATH, "//input[contains(@name,'lastname')]")))
-    last_name_element.send_keys("Silva Player Special")
+    last_name_element.send_keys("Goes Parreira")
     email_element = wait.until(
         EC.presence_of_element_located((By.XPATH, "//input[@type='email'][contains(@id,'address')]")))
-    email_element.send_keys("bira.silva@special.com")
+    email_element.send_keys("edson.goes_20@gcom.com")
     password_element = wait.until(EC.presence_of_element_located((By.XPATH, "//input[@title='Password']")))
     password_element.send_keys("Senha#123456")
     confirm_password_element = wait.until(

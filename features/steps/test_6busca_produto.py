@@ -14,7 +14,7 @@ def step_impl(context):
     )
 
 
-@when('eu busco por "shirt" usando o campo de busca no menu superior')
+@when('eu busco por "shirt" clico no ultimo resultado sugerido usando o campo de busca no menu superior')
 def step_impl(context):
     search_box = context.driver.find_element(By.CSS_SELECTOR, "#search")
     search_box.send_keys("shirt")
